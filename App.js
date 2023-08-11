@@ -9,11 +9,26 @@ import {
   TouchableOpacity,
   SafeAreaView,
   Button,
+  Alert,
+  Platform,
+  Dimensions,
 } from "react-native";
 
+import { useDeviceOrientation } from "@react-native-community/hooks";
+
 export default function App() {
+  // console.log("orientation is:", useDeviceOrientation());
+  const orientation = useDeviceOrientation();
+  console.log(orientation);
+
+  const containerStyle = {
+    backgroundColor: "orange",
+    height: "50%",
+    width: orientation === "portrait" ? "80%" : "50%",
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, containerStyle]}>
       <Text>Hello there.</Text>
       <TouchableHighlight
         onPress={() => {
@@ -30,9 +45,19 @@ export default function App() {
       </TouchableHighlight>
 
       <Button
-        style={styles.container}
         title="click me"
-        onPress={() => console.log("button clicked")}
+        // onPress={() =>
+        //   Alert.alert("Title of Alert", "Here is the message for the user", [
+        //     { text: "Yes", onPress: () => console.log("Yes") },
+        //     { text: "No" },
+        //   ])
+        // }
+        onPress={() => {
+          Alert.prompt("Title of Prompt", "Prompt Message", (text) =>
+            console.log(text)
+          );
+        }}
+        color="black"
       />
     </SafeAreaView>
   );
@@ -44,5 +69,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
