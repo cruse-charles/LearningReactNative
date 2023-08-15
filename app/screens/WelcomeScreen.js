@@ -14,12 +14,13 @@ import AppButton from "../components/AppButton";
 function WelcomeScreen(props) {
   return (
     <ImageBackground
+      blurRadius={10}
       style={styles.background}
       source={require("../assets/background.jpg")}
     >
       <View style={styles.logoContainer}>
         <Image source={require("../assets/logo-red.png")} style={styles.logo} />
-        <Text>Sell What you Don't Need</Text>
+        <Text style={styles.tagline}>Sell What you Don't Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <AppButton title="Login" />
@@ -47,6 +48,11 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 70,
     alignItems: "center",
+  },
+  tagline: {
+    fontSize: 25,
+    fontWeight: "600",
+    paddingVertical: 20,
   },
 });
 

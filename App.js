@@ -23,10 +23,23 @@ import AppText from "./app/components/AppText.js";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppButton from "./app/components/AppButton.js";
+import Card from "./app/components/Card.js";
 
 export default function App() {
-  return <WelcomeScreen />;
+  return (
+    <View style={{ backgroundColor: "#f8f4f4", padding: 20, paddingTop: 100 }}>
+      <Card
+        title="Red jacket for sale"
+        subTitle="$100"
+        image={require("./app/assets/jacket.jpg")}
+      />
+    </View>
+  );
 }
+
+// export default function App() {
+//   return <WelcomeScreen />;
+// }
 
 // export default function App() {
 //   return (
@@ -60,7 +73,7 @@ export default function App() {
 //   },
 // });
 
-//--------------------
+//---------------------------------------------------------------------------------
 // export default function App() {
 //   // console.log("orientation is:", useDeviceOrientation());
 //   // const orientation = useDeviceOrientation();
@@ -71,6 +84,9 @@ export default function App() {
 //   //   height: "50%",
 //   //   width: orientation === "portrait" ? "100%" : "50%",
 //   // };
+
+// Safeview gives us an area to work with in our devices that is 'safe' to render our page on, without going into the top bar or outside of the phone screen
+// MaterialCommunityIcons can be imported from @expo/vector-icons to get really clean icons for app
 
 //   // return (
 //   //   <SafeAreaView style={styles.container}>
