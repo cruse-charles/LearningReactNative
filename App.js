@@ -22,16 +22,26 @@ import ViewImageScreen from "./app/screens/ViewImageScreen.js";
 import AppText from "./app/components/AppText.js";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AppButton from "./app/components/AppButton.js";
 
 export default function App() {
-  return (
-    <SafeAreaView>
-      <AppText>I love React Native</AppText>
-    </SafeAreaView>
-  );
+  return <WelcomeScreen />;
 }
 
+// export default function App() {
+//   return (
+//     <SafeAreaView>
+//       <AppText>I love React Native</AppText>
+//       <AppButton
+//         title="Login"
+//         onPress={() => console.log("login tapped")}
+//       ></AppButton>
+//     </SafeAreaView>
+//   );
+// }
+
 //How to import icons that you can manipulate without worrying about size/pixelation
+
 // export default function App() {
 //   return (
 //     <View>
@@ -50,6 +60,7 @@ export default function App() {
 //   },
 // });
 
+//--------------------
 // export default function App() {
 //   // console.log("orientation is:", useDeviceOrientation());
 //   // const orientation = useDeviceOrientation();
