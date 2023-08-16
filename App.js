@@ -25,9 +25,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppButton from "./app/components/AppButton.js";
 import Card from "./app/components/Card.js";
 import ListingDetailScreen from "./app/screens/ListingDetailsScreen.js";
+import MessagesScreen from "./app/screens/MessagesScreen.js";
 
 export default function App() {
-  return <ViewImageScreen />;
+  return <MessagesScreen />;
 }
 
 //Testing Card
