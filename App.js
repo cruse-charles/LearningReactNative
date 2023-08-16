@@ -27,8 +27,14 @@ import Card from "./app/components/Card.js";
 import ListingDetailScreen from "./app/screens/ListingDetailsScreen.js";
 import MessagesScreen from "./app/screens/MessagesScreen.js";
 
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 export default function App() {
-  return <MessagesScreen />;
+  return (
+    <GestureHandlerRootView>
+      <MessagesScreen />
+    </GestureHandlerRootView>
+  );
 }
 
 //Testing Card
