@@ -9,6 +9,9 @@ function Screen({ children }) {
 const styles = StyleSheet.create({
   screen: {
     paddingTop: constants.statusBarHeight,
+    backgroundColor: "yellow",
+    // height: 200,
+    flex: 1,
   },
 });
 
